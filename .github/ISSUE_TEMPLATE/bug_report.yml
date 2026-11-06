@@ -1,0 +1,35 @@
+name: 🐛 Bug Report
+description: File a bug report for PromptShield extension or Python SDK
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting an issue! Please describe the problem clearly below.
+  - type: input
+    id: version
+    attributes:
+      label: PromptShield Version / Ecosystem
+      placeholder: e.g. Extension v0.1.0 on Chrome 124, or promptshield-0.1.0 on Python 3.11
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: AI Platform Affected
+      options:
+        - ChatGPT (OpenAI)
+        - Claude (Anthropic)
+        - Gemini (Google)
+        - DeepSeek
+        - Microsoft Copilot
+        - Perplexity AI
+        - Other / Python SDK
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem Description
+      description: What happened? What did you expect to happen?
+    validations:
+      required: true

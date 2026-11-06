@@ -1,0 +1,21 @@
+name: 💡 Feature Request & Rule Suggestion
+description: Suggest a new secret detection pattern, platform adapter, or feature
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Have an idea for a new credential detector or AI integration? Let us know!
+  - type: input
+    id: title
+    attributes:
+      label: Feature / Rule Title
+      placeholder: e.g. Add Databricks Personal Access Token detector
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Description & Use Case
+      description: Explain why this feature or rule is valuable to your team.
+    validations:
+      required: true
