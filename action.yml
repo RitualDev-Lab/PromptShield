@@ -1,0 +1,87 @@
+name: "PromptShield AI DLP & Secret Firewall Gate"
+description: "In-Browser & CI/CD Prompt Firewall stopping secrets, API keys, and customer PII from leaking to AI models"
+author: "RitualDev Lab"
+
+branding:
+  icon: "shield"
+  color: "green"
+
+inputs:
+  scan_path:
+    description: "File or directory path to inspect for secrets, credentials, and high-entropy tokens"
+    required: false
+    default: "."
+  entropy_threshold:
+    description: "Shannon entropy cutoff for cryptographic token detection (default 4.5)"
+    required: false
+    default: "4.5"
+  mode:
+    description: "Enforcement mode: BLOCK (exit non-zero) or AUDIT (log warnings only)"
+    required: false
+    default: "BLOCK"
+  fail_on_violation:
+    description: "Whether to fail the CI workflow step if leaks are detected"
+    required: false
+    default: "true"
+
+outputs:
+  status:
+    description: "Inspection outcome (clean or violations_detected)"
+    value: ${{ steps.firewall.outputs.status }}
+  violations_count:
+    description: "Total number of leaked secrets or credentials flagged"
+    value: ${{ steps.firewall.outputs.violations_count }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Run PromptShield AI Secret Firewall Gate
+      id: firewall
+      shell: bash
+      env:
+        INPUT_SCAN_PATH: ${{ inputs.scan_path }}
+        INPUT_ENTROPY: ${{ inputs.entropy_threshold }}
+        INPUT_MODE: ${{ inputs.mode }}
+        INPUT_FAIL: ${{ inputs.fail_on_violation }}
+      run: |
+        echo "🛡️ Executing PromptShield AI DLP & Secret Firewall Gate..."
+        pip install --quiet promptshield || npm install -g --silent @ritualdev/promptshield
+
+        python -c "
+        import os, sys
+        from promptshield import PromptFirewall
+
+        firewall = PromptFirewall(mode=os.environ.get('INPUT_MODE', 'BLOCK'))
+        scan_dir = os.environ.get('INPUT_SCAN_PATH', '.')
+        violations = 0
+
+        for root, _, files in os.walk(scan_dir):
+            if any(p in root for p in ['.git', 'node_modules', '__pycache__', '.venv', 'dist', 'build']):
+                continue
+            for file in files:
+                if file.endswith(('.py', '.js', '.ts', '.env', '.json', '.md', '.txt', '.yml', '.yaml')):
+                    fp = os.path.join(root, file)
+                    try:
+                        with open(fp, 'r', encoding='utf-8', errors='ignore') as f:
+                            content = f.read(500000)
+                            res = firewall.inspect(content)
+                            if not res['allowed']:
+                                for v in res['violations']:
+                                    print(f'::error file={fp}::[PromptShield] Leaked secret detected: {v[\"rule_name\"]} ({v[\"severity\"]})')
+                                    violations += 1
+                    except Exception:
+                        pass
+
+        if violations > 0:
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as gh_out:
+                gh_out.write('status=violations_detected\n')
+                gh_out.write(f'violations_count={violations}\n')
+            if os.environ.get('INPUT_FAIL', 'true').lower() == 'true':
+                print(f'🛑 PromptShield blocked build with {violations} leaked secret(s)!')
+                sys.exit(1)
+        else:
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as gh_out:
+                gh_out.write('status=clean\n')
+                gh_out.write('violations_count=0\n')
+            print('✅ PromptShield: Zero secrets or credentials detected.')
+        "
