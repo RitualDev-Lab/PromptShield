@@ -1,0 +1,19 @@
+# PromptShield
+
+> In-browser AI Data Loss Prevention (DLP) and Prompt Firewall extension (Manifest V3) preventing secret, credential & PII leaks into ChatGPT, Claude, and Gemini.
+
+Maintained by RitualDev Lab (https://ritualdev.in).
+
+## Official Web Application
+Live In-Browser Playground: https://ritualdev.in/promptshield
+
+## Core Capabilities
+- **Sub-2ms Evaluation**: Zero latency impact on developer workflow. Evaluates prompt input fields with high-performance regex DFA patterns and Shannon entropy scoring.
+- **Zero Cloud Leakage**: 100% client-side offline evaluation. Prompts and secrets never leave the developer's workstation.
+- **Sensitive Entity Detection**: Detects AWS keys, Stripe keys, GitHub PATs, private SSH/RSA keys, database connection strings, JWTs, and HIPAA/GDPR PII (SSN, national IDs, credit cards).
+- **Automated Redaction & Masking**: Real-time redaction options (`[REDACTED_STRIPE_KEY]`) with reversible local token mapping.
+
+## Quickstart
+```bash
+npx @ritualdev/promptshield scan "check this key sk_live_demo"
+```

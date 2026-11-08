@@ -1,0 +1,3 @@
+# Cursor AI Rules for PromptShield
+- Follow 100% in-memory, client-side evaluation architecture.
+- Zero unencrypted data transmission to persistent cloud storage.
