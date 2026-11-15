@@ -152,21 +152,44 @@ if (result.hasViolations) {
 
 ---
 
-## 💖 Sponsor & Support via Dodo Payments
+## 🏢 Enterprise Commercial Edition & PromptShield-Core
+
+| Feature | Community Extension ($0 Free) | PromptShield-Core Fleet ($49/mo) |
+| :--- | :---: | :---: |
+| **Client-Side Secret Masking** | ✅ Basic Rules (<4ms) | ✅ Advanced Shannon Entropy + 120+ Redaction Signatures |
+| **Supported LLMs** | ChatGPT, Claude, Gemini | Full Fleet (ChatGPT, Claude, Gemini, DeepSeek, Copilot, Perplexity, Custom APIs) |
+| **Private Core Engine** | ❌ Pre-packaged | ✅ Direct Git Access to `PromptShield-Core` (Custom builds, ADMX, GPO) |
+| **Enterprise SIEM Integration** | ❌ Local Only | ✅ Live Forwarding to Datadog, Splunk, Graylog, AWS CloudWatch |
+| **Central Admin Fleet Management** | ❌ Local Storage | ✅ Organization Policy Push & Central Webhook Relay |
+| **Automated Compliance Exports** | ❌ None | ✅ SOC2 Type II, HIPAA, PCI-DSS, ISO 27001 Audit Ready Reports |
+| **Collaborator Git Access** | ❌ Public Repo | ✅ Instant GitHub Invite to `RitualDev-Lab/PromptShield-Core` |
+
+<div align="center">
+
+[![Subscribe to PromptShield-Core](https://img.shields.io/badge/Subscribe_to_PromptShield--Core-$49%2Fmo-00F59B?style=for-the-badge&logo=shield&logoColor=black)](https://checkout.dodopayments.com/buy/pdt_0NpjONGugY5QkrFDUaPva?quantity=1&paymentAmount=49&amount=49&currency=USD&metadata_tier=promptshield_pro_49&metadata_coreRepo=RitualDev-Lab%2FPromptShield-Core&redirect_url=https%3A%2F%2Fritualdev.in%2Fpricing%2Fsuccess%2F%3Fproduct%3Dpromptshield_pro_49)
+
+[**⚡ Subscribe to PromptShield-Core ($49/mo) & Unlock Private Repo Access Instantly**](https://checkout.dodopayments.com/buy/pdt_0NpjONGugY5QkrFDUaPva?quantity=1&paymentAmount=49&amount=49&currency=USD&metadata_tier=promptshield_pro_49&metadata_coreRepo=RitualDev-Lab%2FPromptShield-Core&redirect_url=https%3A%2F%2Fritualdev.in%2Fpricing%2Fsuccess%2F%3Fproduct%3Dpromptshield_pro_49)
+
+<sub>🔒 *Automated GitHub Fulfillment: Enter your GitHub username during checkout. Our webhook immediately dispatches a collaborator invite to `PromptShield-Core`.*</sub>
+
+</div>
+
+---
+
+## 💖 Community Support & Alternative Sponsorship
 
 PromptShield is engineered by RitualDev Lab. Your sponsorship funds our client-side regex security rules, Shannon entropy detection models, and multi-browser enterprise extension releases (Chrome, Edge, Firefox).
 
 <div align="center">
 
-[![Sponsor on Dodo Payments](https://img.shields.io/badge/Sponsor_via_Dodo-Payments-8b5cf6?style=for-the-badge&logo=shield&logoColor=white)](https://checkout.dodopayments.com/buy/pdt_0NpjONGugY5QkrFDUaPva)
 [![Interactive Donation Portal](https://img.shields.io/badge/Donation_Portal-Cards%20%7C%20UPI%20%7C%20Apple%20Pay-ff5964?style=for-the-badge&logo=heart&logoColor=white)](https://ritualdev.in/donate)
 [![GitHub Sponsors](https://img.shields.io/badge/GitHub_Sponsors-RitualDev--Lab-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/RitualDev-Lab)
 
 <br/>
 
-[**⚡ 1-Click Dodo Payments Checkout**](https://checkout.dodopayments.com/buy/pdt_0NpjONGugY5QkrFDUaPva) &nbsp;•&nbsp; [**🎁 Interactive Donation Form (USD & INR UPI)**](https://ritualdev.in/donate) &nbsp;•&nbsp; [**❤️ GitHub Sponsors**](https://github.com/sponsors/RitualDev-Lab)
+[**🎁 Interactive Donation Form (USD & INR UPI)**](https://ritualdev.in/donate) &nbsp;•&nbsp; [**❤️ GitHub Sponsors**](https://github.com/sponsors/RitualDev-Lab)
 
-<sub>🔒 *Zero physical shipping required. Powered by Dodo Payments (Merchant of Record) with instant tax invoice and global payment methods (Cards, UPI, Apple Pay).*</sub>
+<sub>🔒 *Powered by Dodo Payments (Merchant of Record) with instant tax invoice and global payment methods (Cards, UPI, Apple Pay).*</sub>
 
 </div>
 
