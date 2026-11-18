@@ -45,7 +45,7 @@ runs:
         INPUT_FAIL: ${{ inputs.fail_on_violation }}
       run: |
         echo "🛡️ Executing PromptShield AI DLP & Secret Firewall Gate..."
-        pip install --quiet promptshield || npm install -g --silent @ritualdev/promptshield
+        pip install --quiet promptshield || npm install -g --silent @ritualdev-lab/promptshield
 
         python -c "
         import os, sys
