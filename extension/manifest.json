@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "PromptShield – AI DLP & Prompt Firewall",
+  "short_name": "PromptShield",
+  "version": "0.1.1",
+  "description": "Enterprise in-browser DLP preventing secrets, credentials, and PII from leaking into AI tools.",
+  "icons": {
+    "16":  "icons/shield-16.png",
+    "48":  "icons/shield-48.png",
+    "128": "icons/shield-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16":  "icons/shield-16.png",
+      "48":  "icons/shield-48.png",
+      "128": "icons/shield-128.png"
+    },
+    "default_title": "PromptShield"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://chat.deepseek.com/*",
+        "https://copilot.microsoft.com/*",
+        "https://www.perplexity.ai/*",
+        "https://huggingface.co/chat/*",
+        "https://chat.mistral.ai/*",
+        "<all_urls>"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "scrub-active-textarea": {
+      "suggested_key": {
+        "default":    "Alt+Shift+R",
+        "mac":        "Alt+Shift+R",
+        "chromeos":   "Alt+Shift+R",
+        "linux":      "Alt+Shift+R",
+        "windows":    "Alt+Shift+R"
+      },
+      "description": "Instantly redact secrets & PII inside the focused textarea or contenteditable element"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PromptShield</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 300px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      color: #e8eaf6;
+      background: #0d1117;
+      padding: 16px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    header svg { flex-shrink: 0; }
+
+    .title  { font-size: 15px; font-weight: 700; color: #fff; }
+    .badge  { font-size: 10px; background: #1a3c7a; color: #7eb0ff; border-radius: 4px; padding: 2px 6px; font-weight: 600; }
+
+    .shortcut-box {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .shortcut-box p {
+      color: #8b949e;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .keys {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+    }
+
+    kbd {
+      background: #21262d;
+      border: 1px solid #444c56;
+      border-bottom-width: 2px;
+      border-radius: 4px;
+      padding: 2px 7px;
+      color: #c9d1d9;
+      font-family: monospace;
+    }
+
+    button#scrub-btn {
+      width: 100%;
+      padding: 9px;
+      border: none;
+      border-radius: 7px;
+      background: #1a3c7a;
+      color: #7eb0ff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    button#scrub-btn:hover { background: #1f4a94; }
+
+    footer {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 11px;
+      color: #484f58;
+    }
+    footer a { color: #58a6ff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Shield SVG icon (inline, no external resource needed) -->
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L4 6V12C4 16.418 7.582 20.418 12 22C16.418 20.418 20 16.418 20 12V6L12 2Z"
+            fill="#1a3c7a" stroke="#7eb0ff" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M9 12L11 14L15 10" stroke="#7eb0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div>
+      <div class="title">PromptShield</div>
+      <span class="badge">MV3 · DLP</span>
+    </div>
+  </header>
+
+  <div class="shortcut-box">
+    <p>Press the shortcut to instantly redact secrets &amp; PII inside the focused textarea on any page:</p>
+    <div class="keys">
+      <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>
+    </div>
+  </div>
+
+  <button id="scrub-btn">🛡️ Scrub Active Textarea Now</button>
+
+  <footer>
+    <a href="https://ritualdev.in/promptshield" target="_blank" rel="noopener">ritualdev.in/promptshield</a>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
