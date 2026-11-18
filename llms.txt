@@ -15,5 +15,5 @@ Live In-Browser Playground: https://ritualdev.in/promptshield
 
 ## Quickstart
 ```bash
-npx @ritualdev/promptshield scan "check this key sk_live_demo"
+npx @ritualdev-lab/promptshield scan "check this key sk_live_demo"
 ```

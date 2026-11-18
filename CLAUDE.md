@@ -8,5 +8,5 @@
 - **Manifest V3 Content Script**: Attaches non-intrusively to LLM chat input fields (ChatGPT, Claude, Gemini, DeepSeek) and intercepts outbound form submission/fetch requests.
 
 ## Commands
-- Run CLI: `npx @ritualdev/promptshield --help`
+- Run CLI: `npx @ritualdev-lab/promptshield --help`
 - Live Playground: https://ritualdev.in/promptshield

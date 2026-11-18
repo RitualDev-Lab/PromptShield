@@ -6,7 +6,7 @@
 [![GitHub Release](https://img.shields.io/github/v/release/RitualDev-Lab/PromptShield?color=blue&label=Release&logo=github)](https://github.com/RitualDev-Lab/PromptShield/releases/latest)
 [![Chrome Web Store](https://img.shields.io/badge/Chrome_Extension-Manifest_V3-green?logo=googlechrome)](https://github.com/RitualDev-Lab/PromptShield/releases)
 [![Python SDK](https://img.shields.io/badge/Python-3.8+-blue?logo=python)](https://github.com/RitualDev-Lab/PromptShield/releases)
-[![NPM Package](https://img.shields.io/badge/NPM-@ritualdev/promptshield-red?logo=npm)](https://github.com/RitualDev-Lab/PromptShield/releases)
+[![NPM Package](https://img.shields.io/badge/NPM-@ritualdev-lab/promptshield-red?logo=npm)](https://github.com/RitualDev-Lab/PromptShield/releases)
 [![License](https://img.shields.io/badge/License-Proprietary%20/%20Community-orange)](./LICENSE)
 [![Zero VPS Cost](https://img.shields.io/badge/Cloud_Cost-$0.00/mo-success)](https://promptshield.io)
 
@@ -116,10 +116,10 @@ else:
 
 ### 3. Node.js / TypeScript SDK
 ```bash
-npm install @ritualdev/promptshield
+npm install @ritualdev-lab/promptshield
 ```
 ```typescript
-import { InBrowserDlpEngine, SurrogateMaskingEngine } from '@ritualdev/promptshield';
+import { InBrowserDlpEngine, SurrogateMaskingEngine } from '@ritualdev-lab/promptshield';
 
 const engine = new InBrowserDlpEngine();
 const result = engine.scan("My AWS key is AKIAIOSFODNN7EXAMPLE");
