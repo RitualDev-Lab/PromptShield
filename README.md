@@ -8,7 +8,7 @@
 [![Python SDK](https://img.shields.io/badge/Python-3.8+-blue?logo=python)](https://github.com/RitualDev-Lab/PromptShield/releases)
 [![NPM Package](https://img.shields.io/badge/NPM-@ritualdev-lab/promptshield-red?logo=npm)](https://github.com/RitualDev-Lab/PromptShield/releases)
 [![License](https://img.shields.io/badge/License-Proprietary%20/%20Community-orange)](./LICENSE)
-[![Zero VPS Cost](https://img.shields.io/badge/Cloud_Cost-$0.00/mo-success)](https://promptshield.io)
+[![Zero VPS Cost](https://img.shields.io/badge/Cloud_Cost-$0.00/mo-success)](https://ritualdev.in/promptshield)
 
 **PromptShield** is an enterprise-grade, in-browser Data Loss Prevention (DLP) and Prompt Firewall extension (Manifest V3) that stops source code secrets, customer PII, project codenames, and API credentials from leaking into AI tools (**ChatGPT, Claude, Gemini, DeepSeek, Copilot, Perplexity, HuggingFace Chat, and Le Chat**).
 
@@ -25,7 +25,7 @@ Every day, engineers, analysts, and knowledge workers paste confidential company
 * **API Keys & Cloud Secrets**: Leaked AWS, OpenAI, GitHub, Stripe, and Database URIs expose production systems.
 * **Uncapped Cloud Liabilities**: Once a secret is regurgitated into a public LLM context, it cannot be deleted.
 
-**PromptShield inspects and sanitizes every prompt locally on the workstation CPU in $< 4\text{ ms}$ with zero cloud compute overhead ($0 VPS, $0 cloud bills).**
+**PromptShield inspects and sanitizes every prompt locally on the workstation CPU in < 4 ms with zero cloud compute overhead ($0 VPS, $0 cloud bills).**
 
 ---
 
@@ -60,7 +60,7 @@ flowchart TD
         DOMHook -.->|Zero-Plaintext Metadata Only| BackgroundVault
     end
 
-    subgraph ZeroCostEdge["Serverless Edge (api.promptshield.io)"]
+    subgraph ZeroCostEdge["RitualDev Portal (ritualdev.in/promptshield)"]
         CFWorkers["Cloudflare Workers (100k free req/day)"]
         SIEM["Enterprise SIEM (Splunk / Datadog / Sentinel CEF)"]
     end
@@ -94,7 +94,7 @@ flowchart TD
 3. Open `chrome://extensions/` (or `edge://extensions/`), enable **Developer mode**.
 4. Click **Load unpacked** and select the folder. PromptShield will automatically protect your AI sessions.
 
-### 2. Python SDK (`pip install promptshield`)
+### 2. Python SDK (`pip install promptshield-defense`)
 Used by backend engineering teams to protect LangChain, LlamaIndex, and FastAPI LLM endpoints:
 
 ```python
@@ -134,7 +134,7 @@ if (result.hasViolations) {
 
 ## 🏢 Enterprise Fleet Features ($50K–$250K ACV Capabilities)
 
-* **Central Fleet Policy Sync (`api.promptshield.io`)**: Push corporate DLP policies, project codenames, and custom regex rules across 10,000+ managed laptops with cryptographic **HMAC-SHA256 signature verification**.
+* **Central Fleet Policy Sync (`ritualdev.in/promptshield`)**: Push corporate DLP policies, project codenames, and custom regex rules across 10,000+ managed laptops with cryptographic **HMAC-SHA256 signature verification**.
 * **Real-Time SIEM & SOC Streaming**: Turnkey streaming adapters for **Splunk HEC**, **Datadog Logs JSON**, and **ArcSight / Microsoft Sentinel Common Event Format (CEF)**.
 * **Synthetic Canary Honeypots**: Injects decoy API tokens into sessions to mathematically verify whether LLMs retain private customer tokens.
 * **Enterprise Windows GPO & Jamf Deployments**: Pre-configured Chrome Enterprise `ExtensionInstallForcelist` policies and Windows Registry `.admx` templates.
@@ -143,8 +143,8 @@ if (result.hasViolations) {
 
 ## 📊 Performance Benchmarks
 
-* **Inspection Latency**: $< 4.0\text{ ms}$ on 5,000+ character code snippets.
-* **Memory Footprint**: $< 18\text{ MB}$ resident memory.
+* **Inspection Latency**: < 4.0 ms on 5,000+ character code snippets.
+* **Memory Footprint**: < 18 MB resident memory.
 * **Infrastructure Cost**: **$0.00 / month** ($0 VPS, $0 cloud compute overhead).
 * **Test Verification**: **77 / 77 passing tests** across Node 20, 22, 24 and Python 3.8+.
 
